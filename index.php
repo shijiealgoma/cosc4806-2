@@ -1,4 +1,5 @@
 <?php
+session_start(); 
 require_once ('nav.php');
 
 ?>
@@ -17,6 +18,27 @@ require_once ('nav.php');
   <?php
     get_nav_buttons();
   ?>
+  <div>
+    Click above <b>Buttons</b> to see the result!
+  </div>
+  <?php
+    // if  $_SESSION['username']
+  if(isset($_SESSION['username']))
+
+  {
+    echo "<br>";
+    echo "<br>";
+    echo "<div>";
+    echo "<h1>Welcome, ".$_SESSION['username'] ."</h1>";;
+    echo "</div>";
+    
+    //echo logout button with logout function
+    echo "<br>";
+    echo "<br>";
+    echo "<a href='logout.php'>Logout</a>";
+  }
+  ?>
+  
 </body>
 
 </html>
